@@ -1,0 +1,15 @@
+.user {
+    text-align: center;
+    background-color: beige;
+    border-radius: 8px;
+    padding: 5px;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+.usersUl {
+    list-style-type: none;
+
+}
+.blue {
+    color: rgba(57, 90, 145, 0.937);
+}
