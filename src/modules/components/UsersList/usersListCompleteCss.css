@@ -13,3 +13,16 @@
 .blue {
     color: rgba(57, 90, 145, 0.937);
 }
+.delete:hover {
+    color: red;
+    background: black;
+    transition: 1s;
+    border-color: currentColor
+}
+.edit:hover {
+    color: rgba(57, 90, 145, 0.937);
+    transition: 1s;
+    background: rgb(141, 183, 199);
+    border-color: currentColor
+
+}

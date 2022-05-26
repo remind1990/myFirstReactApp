@@ -27,9 +27,11 @@ export default function List(props) {
             saveData={props.saveData}
           ></ListInput>
         ) : null}
-        <button onClick={onDelete}>Delete</button>
+        <button className="delete" onClick={onDelete}>
+          Delete
+        </button>
       </li>
-      <button onClick={onChangeVisible}>
+      <button className="edit" onClick={onChangeVisible}>
         {visible ? null : 'Edit'}
       </button>
     </>
