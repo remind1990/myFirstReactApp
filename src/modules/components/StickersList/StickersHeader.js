@@ -38,6 +38,7 @@ export default function StickersHeader({
         value={Search}
         onChange={onSearchChange}
         className="searchInput"
+        placeholder="Search..."
       ></input>
       <Button
         variant="primary"
