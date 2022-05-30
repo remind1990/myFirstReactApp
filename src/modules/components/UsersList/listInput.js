@@ -1,4 +1,5 @@
-import React, { Component, useState } from 'react';
+import React, { useState } from 'react';
+import { Button } from 'react-bootstrap';
 
 export default function ListInput(props) {
   const [user, setUsers] = useState(props.user);
@@ -15,14 +16,21 @@ export default function ListInput(props) {
     props.saveData(user.id, user.name);
   }
   return (
-    <div>
+    <>
       <input
         type="text"
         name="name"
         onChange={onImputChange}
         value={user.name}
       ></input>
-      <button onClick={saveEdits}>Save</button>
-    </div>
+      <Button
+        variant="secondary"
+        onClick={saveEdits}
+        className="listButton"
+        size="sm"
+      >
+        Save
+      </Button>
+    </>
   );
 }

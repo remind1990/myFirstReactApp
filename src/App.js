@@ -1,8 +1,10 @@
-import React, { Component } from 'react';
-import Users from './modules/components/UsersList/Users';
+import React from 'react';
+import './modules/components/StickersList/stickersGlobal.css';
+
 import './modules/components/UsersList/usersListCompleteCss.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import HomeWorkSelector from './modules/homeworks selector/homeWorkSelector.js';
 
 export default function App() {
-  return <Users />;
+  return <HomeWorkSelector />;
 }

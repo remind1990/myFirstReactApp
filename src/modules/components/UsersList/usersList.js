@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import List from './list.js';
 
 export default function UsersList({ users, onDelete, saveData }) {

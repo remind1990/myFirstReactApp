@@ -1,8 +1,9 @@
 import React, { Component, useState, useEffect } from 'react';
 import ListInput from './listInput.js';
+import { Button } from 'react-bootstrap';
 
 export default function List(props) {
-  const [user, setUsers] = useState(props.user);
+  const [user, setUser] = useState(props.user);
   const [visible, setVisible] = useState(false);
 
   function onDelete(e) {
@@ -12,28 +13,37 @@ export default function List(props) {
 
   function onChangeVisible(e) {
     setVisible(!visible);
-    console.log(visible);
   }
+
   return (
     <>
       <li className="user">
-        {user.name} {user.surname}
+        {props.user.name} {props.user.surname}
         {visible ? (
           <ListInput
             key={user.id}
-            onChange={props.onImputChange}
-            user={user}
+            user={props.user}
             changeVisible={onChangeVisible}
             saveData={props.saveData}
           ></ListInput>
         ) : null}
-        <button className="delete" onClick={onDelete}>
+        <Button
+          variant="secondary"
+          size="sm"
+          className="listButton"
+          onClick={onChangeVisible}
+        >
+          {visible ? 'Cancel' : 'Edit'}
+        </Button>
+        <Button
+          variant="secondary"
+          className="listButton delete"
+          onClick={onDelete}
+          size="sm"
+        >
           Delete
-        </button>
+        </Button>
       </li>
-      <button className="edit" onClick={onChangeVisible}>
-        {visible ? null : 'Edit'}
-      </button>
     </>
   );
 }

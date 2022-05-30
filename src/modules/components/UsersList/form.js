@@ -1,5 +1,5 @@
-import React, { Component, useState } from 'react';
-
+import React, { useState } from 'react';
+import { Button } from 'react-bootstrap';
 export default function Form(props) {
   const [user, setUsers] = useState({ name: '', surname: '' });
 
@@ -15,20 +15,30 @@ export default function Form(props) {
   }
 
   return (
-    <form onSubmit={onSubmit}>
+    <form className="namesForm" onSubmit={onSubmit}>
       <input
+        className="nameInput"
         type="text"
         name="name"
         value={user.name}
         onChange={onImputChange}
       ></input>
       <input
+        className="surnameInput"
         type="text"
         name="surname"
         value={user.surname}
         onChange={onImputChange}
       ></input>
-      <button>Save</button>
+
+      <Button
+        variant="outline-success"
+        style={{ margin: '0.2rem' }}
+        type="submit"
+        onClick={onSubmit}
+      >
+        Save
+      </Button>
     </form>
   );
 }

@@ -1,3 +1,6 @@
+input {
+    border-color: rgba(71, 178, 207, 0.834)
+}
 .user {
     text-align: center;
     background-color: beige;
@@ -5,24 +8,47 @@
     padding: 5px;
     font-weight: bold;
     margin-bottom: 0.5rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
 .usersUl {
     list-style-type: none;
+    box-sizing: content-box;
+    background: bisque;
+    padding: 10px;
+    border-radius: 8px;
+    margin: 0 auto;
+    -webkit-box-shadow: 5px 6px 11px 8px rgb(221 212 154); 
+    box-shadow: 5px 6px 11px 8px rgb(221 212 154);
+    border-left: 8px solid beige;
 
 }
 .blue {
     color: rgba(57, 90, 145, 0.937);
 }
-.delete:hover {
-    color: red;
-    background: black;
-    transition: 1s;
-    border-color: currentColor
-}
-.edit:hover {
-    color: rgba(57, 90, 145, 0.937);
-    transition: 1s;
-    background: rgb(141, 183, 199);
-    border-color: currentColor
 
+.listButton {
+    
+    
+    margin-left: 0.5rem;
+}
+.container {
+    width: 70%;
+}
+.namesForm {
+    display: flex;
+    margin: 2rem auto;
+    width: 70%
+
+}
+.nameInput{
+    width: 50%;
+    border-right: none;
+    border-radius: 8px 0px 0px 0px;
+}
+.surnameInput {
+    width: 50%;
+    border-left: none;
+    border-radius: 0px 0px 8px 0px;
 }
