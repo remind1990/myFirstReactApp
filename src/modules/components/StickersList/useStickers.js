@@ -25,10 +25,13 @@ export function useStickers(Search) {
   }
 
   const createNewSticker = useCallback((newSticker) => {
-    getNewSticker(newSticker).then((newSticker) =>
-      setStickers([...Stickers, newSticker])
+    getNewSticker(newSticker).then(
+      (newSticker) =>
+        setStickers((Stickers) => {
+          return [...Stickers, newSticker];
+        }) // для того что бы не вызывать замыкание при нажатие удаление и добавление нового стикера передаем стрелочную функцию которая будет нам давать актуальный стейт
     );
-  });
+  }, []);
   function updateText(id, newTitle) {
     const item = Stickers.find((sticker) => sticker.id === id);
     const newSticker = { ...item, title: newTitle };

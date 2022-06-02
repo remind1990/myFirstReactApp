@@ -1,5 +1,6 @@
 import { usersUrl, stickersUrl } from '../constants/constatns.js';
 
+
 export function getUsers() {
   return fetch(usersUrl).then((response) => response.json());
 }

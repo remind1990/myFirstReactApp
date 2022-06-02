@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
+import { useUsersContentHook } from '../../contexts/userContext';
 export default function Form(props) {
   const [user, setUsers] = useState({ name: '', surname: '' });
 
@@ -9,6 +10,7 @@ export default function Form(props) {
       [e.target.name]: e.target.value,
     });
   }
+  const { LoggedUser } = useUsersContentHook();
   function onSubmit(e) {
     e.preventDefault();
     props.onSave(user);
@@ -22,6 +24,7 @@ export default function Form(props) {
         name="name"
         value={user.name}
         onChange={onImputChange}
+        placeholder={LoggedUser ? LoggedUser.name : 'Not logged in'}
       ></input>
       <input
         className="surnameInput"

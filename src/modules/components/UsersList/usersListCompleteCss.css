@@ -1,7 +1,7 @@
 input {
     border-color: rgba(71, 178, 207, 0.834)
 }
-.user {
+.userLi {
     text-align: center;
     background-color: beige;
     border-radius: 8px;
@@ -12,18 +12,28 @@ input {
     justify-content: flex-end;
     align-items: center;
 }
+.userLiDark {
+    background-color: 	#696969;
+
+}
 .usersUl {
     list-style-type: none;
     box-sizing: content-box;
-    background: bisque;
     padding: 10px;
     border-radius: 8px;
     margin: 0 auto;
+
+}
+.darkUl {  background: black; }
+.lightUl {
+    background: bisque;
     -webkit-box-shadow: 5px 6px 11px 8px rgb(221 212 154); 
     box-shadow: 5px 6px 11px 8px rgb(221 212 154);
     border-left: 8px solid beige;
 
-}
+}    
+
+
 .blue {
     color: rgba(57, 90, 145, 0.937);
 }

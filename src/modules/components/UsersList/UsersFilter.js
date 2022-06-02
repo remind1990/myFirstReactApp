@@ -1,19 +1,35 @@
 import React from 'react';
-import { Form } from 'react-bootstrap';
-export default function UsersFilter({
-  filter,
-  setFilter,
-  search,
-  setSearch,
-}) {
+import { Form, Button } from 'react-bootstrap';
+import { useUsersContentHook } from '../../contexts/userContext';
+export default function UsersFilter({ filter, setFilter }) {
+  const { isLoggedIn, login, logout } = useUsersContentHook();
+
   function onChange(e) {
     setFilter(e.target.value);
   }
-  function onSearchChange(e) {
-    setSearch(e.target.value);
-  }
+
   return (
     <>
+      {isLoggedIn ? (
+        <Button
+          variant="secondary"
+          size="sm"
+          onClick={logout}
+          className="listButton"
+        >
+          Logout
+        </Button>
+      ) : (
+        <Button
+          variant="secondary"
+          size="sm"
+          onClick={login}
+          className="listButton"
+        >
+          Login
+        </Button>
+      )}
+
       <Form.Select
         aria-label="Default select example"
         onChange={onChange}
