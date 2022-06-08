@@ -1,6 +1,7 @@
 import React, { useMemo } from 'react';
 import UsersList from './usersList.js';
 import Form from './form.js';
+import Loading from '../../Loaders/loading.js';
 
 import { useUsers } from './useUsers.js';
 
@@ -11,6 +12,7 @@ import { Button } from 'react-bootstrap';
 export default function Users() {
   const {
     users,
+    Status,
     filter,
     setFilter,
     deleteOneUser,
@@ -46,11 +48,16 @@ export default function Users() {
         filter={filter}
         setFilter={setFilter}
       ></UsersFilter>
-      <UsersList
-        users={filteredUsers}
-        onDelete={deleteOneUser}
-        saveData={saveData}
-      />
+      {Status === 'Loading' ? (
+        <Loading />
+      ) : (
+        <UsersList
+          users={filteredUsers}
+          onDelete={deleteOneUser}
+          saveData={saveData}
+        />
+      )}
+
       <Form onSave={createNewUser} />
     </div>
   );

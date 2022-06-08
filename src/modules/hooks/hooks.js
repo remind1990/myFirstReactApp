@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+
 export function useLocalStorages(key, defaultValue = '') {
   const [value, setValue] = useState(
     localStorage.getItem(key),

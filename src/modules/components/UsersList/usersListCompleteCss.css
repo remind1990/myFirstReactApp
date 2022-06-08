@@ -3,7 +3,8 @@ input {
 }
 .userLi {
     text-align: center;
-    background-color: beige;
+   
+    background: rgb(118, 178, 207);
     border-radius: 8px;
     padding: 5px;
     font-weight: bold;
@@ -26,10 +27,9 @@ input {
 }
 .darkUl {  background: black; }
 .lightUl {
-    background: bisque;
-    -webkit-box-shadow: 5px 6px 11px 8px rgb(221 212 154); 
-    box-shadow: 5px 6px 11px 8px rgb(221 212 154);
-    border-left: 8px solid beige;
+    background: #eae6e2;
+    box-shadow: 5px 6px 11px 8px rgb(83 81 68);
+    border-left: 8px solid rgb(118, 178, 207);
 
 }    
 
@@ -44,7 +44,10 @@ input {
     margin-left: 0.5rem;
 }
 .container {
-    width: 70%;
+    background: #96b4db;
+    color: #605555;
+    border-radius: 8px;
+    padding: 1% 2% 0 2%;
 }
 .namesForm {
     display: flex;
@@ -56,9 +59,11 @@ input {
     width: 50%;
     border-right: none;
     border-radius: 8px 0px 0px 0px;
+    margin-bottom: 0.2rem;
 }
 .surnameInput {
     width: 50%;
     border-left: none;
     border-radius: 0px 0px 8px 0px;
+    margin-bottom: 0.2rem;
 }

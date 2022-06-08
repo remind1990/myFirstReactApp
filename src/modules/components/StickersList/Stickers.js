@@ -3,6 +3,7 @@ import StickersHeader from './StickersHeader.js';
 import StickersBody from './StickersBody.js';
 import { useLocalStorages } from '../../hooks/hooks.js';
 import { useStickers } from './useStickers';
+import Loading from '../../Loaders/loading';
 
 export default function Stickers() {
   const [Search, setSearch] = useLocalStorages('Search');
@@ -23,7 +24,7 @@ export default function Stickers() {
         setSearch={setSearch}
       />
       {Status === 'Loading...' ? (
-        'LOADING...'
+        <Loading />
       ) : Status === 'Done' ? (
         <StickersBody
           stickers={Stickers}

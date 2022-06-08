@@ -19,7 +19,11 @@ export default function ThemeProvider({ children }) {
   });
 
   const changeToDark = useCallback(() => {
-    setTheme({ name: 'Dark', background: 'white', color: 'black' });
+    setTheme({
+      name: 'Dark',
+      background: '#96b4db',
+      color: '#605555',
+    });
   }, []);
 
   const changeToLight = useCallback(() => {
