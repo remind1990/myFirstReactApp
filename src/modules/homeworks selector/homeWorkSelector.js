@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
-import Users from '../components/UsersList/Users.js';
-import Stickers from '../components/StickersList/Stickers.js';
+import Users from '../UsersList/components/Users.js';
+import Stickers from '../StickersList/components/Stickers.js';
 // import { Form } from 'react-bootstrap';
 import UserProvider from '../contexts/userContext.js';
 import ThemeProvider from '../contexts/themeContext.js';
@@ -18,16 +18,6 @@ export default function HomeWorkSelector() {
   // const [Selector, setSelector] = useState(
   //   localStorage.getItem('Selector' || 'first')
   // );
-  const [VisibleHeader, setVisibleHeader] = useState(
-    localStorage.getItem('VisibleHeader' || false)
-  );
-  useEffect(() => {
-    localStorage.setItem('VisibleHeader', '');
-  }, [VisibleHeader]);
-
-  function changeVisibleHeader() {
-    setVisibleHeader(!VisibleHeader);
-  }
 
   // function onChange(e) {
   //   setSelector(e.target.value);
@@ -56,26 +46,15 @@ export default function HomeWorkSelector() {
     marginBottom: '1rem',
     background: '#76b2cf',
   };
-  console.log(typeof VisibleHeader);
 
   return (
     <Router>
       <ThemeProvider>
         <UserProvider>
-          {VisibleHeader ? (
-            <div style={headersStyle}>
-              <Link to="/First">First Homework</Link>
-              <Link to="/Second">Second Homework</Link>
-            </div>
-          ) : null}
-
           <Routes>
             <Route path="/First" element={<Users />} />
             <Route path="/Second" element={<Stickers />} />
-            <Route
-              path="*"
-              element={<Landing visible={changeVisibleHeader} />}
-            />
+            <Route path="*" element={<Landing />} />
           </Routes>
 
           {/* <Form.Select
