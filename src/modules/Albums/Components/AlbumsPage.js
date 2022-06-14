@@ -5,6 +5,7 @@ import Loading from '../../Loaders/loading';
 
 export default function AlbumsPage() {
   const { users, Status } = useAlbums();
+
   return (
     <>
       {Status === 'Loading' ? (

@@ -12,6 +12,7 @@ export default function Albums() {
           to="/"
           style={{
             textDecoration: 'none',
+            margin: '0 1%',
           }}
         >
           Home
@@ -21,6 +22,7 @@ export default function Albums() {
           to=""
           style={{
             textDecoration: 'none',
+            margin: '0 1%',
           }}
         >
           List of Users
@@ -30,6 +32,7 @@ export default function Albums() {
           to="all"
           style={{
             textDecoration: 'none',
+            margin: '0 1%',
           }}
         >
           Show All

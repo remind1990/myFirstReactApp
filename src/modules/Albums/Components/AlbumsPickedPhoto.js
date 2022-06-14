@@ -11,7 +11,7 @@ export default function AlbumsPickedPhoto() {
     useAlbums();
 
   useEffect(() => getPickedStickers(params.id), []);
-  console.log('Rendering...');
+
   return (
     <>
       {Error === 'No Error' && Status === 'Loading' ? (
