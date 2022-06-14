@@ -1,21 +1,12 @@
 import React from 'react';
-import './modules/components/StickersList/stickersGlobal.css';
+import '../src/App.css';
+import './modules/Loaders/loaders.css';
+import './modules/StickersList/components/stickersGlobal.css';
 
-import './modules/components/UsersList/usersListCompleteCss.css';
+import './modules/UsersList/components/usersListCompleteCss.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import HomeWorkSelector from './modules/homeworks selector/homeWorkSelector.js';
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-} from 'react-router-dom';
 
 export default function App() {
-  return (
-    <Router>
-      <Routes>
-        <Route path="*" element={<HomeWorkSelector />} />)
-      </Routes>
-    </Router>
-  );
+  return <HomeWorkSelector />;
 }

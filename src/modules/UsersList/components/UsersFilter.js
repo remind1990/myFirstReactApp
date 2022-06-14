@@ -1,34 +1,22 @@
 import React from 'react';
 import { Form, Button } from 'react-bootstrap';
-import { useUsersContentHook } from '../../contexts/userContext';
+import { useNavigate } from 'react-router-dom';
 export default function UsersFilter({ filter, setFilter }) {
-  const { isLoggedIn, login, logout } = useUsersContentHook();
-
+  const navigate = useNavigate();
   function onChange(e) {
     setFilter(e.target.value);
   }
 
   return (
     <>
-      {isLoggedIn ? (
-        <Button
-          variant="secondary"
-          size="sm"
-          onClick={logout}
-          className="listButton"
-        >
-          Logout
-        </Button>
-      ) : (
-        <Button
-          variant="secondary"
-          size="sm"
-          onClick={login}
-          className="listButton"
-        >
-          Login
-        </Button>
-      )}
+      <Button
+        variant="secondary"
+        size="sm"
+        style={{ margin: '0 1%' }}
+        onClick={() => setTimeout(() => navigate(-1), 500)}
+      >
+        Back to home page
+      </Button>
 
       <Form.Select
         aria-label="Default select example"

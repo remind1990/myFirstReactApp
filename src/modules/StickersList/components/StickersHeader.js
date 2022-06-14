@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 
 export default function StickersHeader({
   stickers,
@@ -7,6 +8,7 @@ export default function StickersHeader({
   Search,
   setSearch,
 }) {
+  const navigate = useNavigate();
   function getColor() {
     let random = Math.floor(Math.random() * 10 + stickers.length);
     if (random < 2 && random < 5) {
@@ -33,6 +35,14 @@ export default function StickersHeader({
 
   return (
     <div className="headersStickers">
+      <Button
+        variant="outline-primary"
+        size="sm"
+        style={{ margin: '0 1%' }}
+        onClick={() => setTimeout(() => navigate(-1), 500)}
+      >
+        Back to home page
+      </Button>
       <input
         type="text"
         value={Search}

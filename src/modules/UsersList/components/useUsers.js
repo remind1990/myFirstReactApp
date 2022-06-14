@@ -1,19 +1,23 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { usersUrl } from '../../constants/constatns.js';
+import { useLocalStorages } from '../../hooks/hooks.js';
 
 export function useUsers() {
   const [users, setUsers] = useState([]);
-  const [filter, setFilter] = useState(
-    localStorage.getItem('filter') || 'all'
-  );
+  const [filter, setFilter] = useLocalStorages('filter' || 'all');
+  const [Status, setStatus] = useState('Pending');
+
+  // useEffect(() => {
+  //   localStorage.setItem('filter', filter);
+  // }, [filter]);
 
   useEffect(() => {
-    localStorage.setItem('filter', filter);
-  }, [filter]);
-
-  useEffect(() => {
-    axios.get(usersUrl).then(({ data }) => setUsers(data));
+    setStatus('Loading');
+    axios.get(usersUrl).then(({ data }) => {
+      setStatus('Done');
+      setUsers(data);
+    });
   }, []);
 
   function deleteOneUser(id) {
@@ -43,6 +47,8 @@ export function useUsers() {
 
   return {
     users,
+    Status,
+    setStatus,
     setUsers,
     filter,
     setFilter,
